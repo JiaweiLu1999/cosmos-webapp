@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Documentation | COSMOS Sub-project</title>
+  <link rel="stylesheet" href="../static/css/base.css">
+  <link rel="stylesheet" href="../static/css/common.css">
+  <link rel="stylesheet" href="../static/css/documentation.css">
+  <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<div class="nav">
+  <div class="wrapper">
+    <div class="logo"></div>
+    <ul>
+      <li><a href="#">Real-time Demo</a></li>
+      <li><a href="#">Resource</a></li>
+      <li><a href="#">Documentation</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Home</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="left-nav">
+  <ul>
+    <li>
+      <a href="#">Installation</a>
+      <ul>
+        <li><a href="#">DeepStream SDK</a></li>
+        <li><a href="#">OpenCV</a></li>
+        <li><a href="#">Calibration Plugin</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Usage</a>
+      <ul>
+        <li><a href="#">Deepstream-app</a></li>
+        <li><a href="#">Python Application</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</div>
+
+<div class="doc-body wrapper">
+  <div>
+    <h2><a target="_blank"
+           href="https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_Quickstart.html">
+      dGPU Setup for Ubuntu
+    </a></h2>
+    <p>This section explains how to prepare an Ubuntu x86_64 system with NVIDIA dGPU devices before installing the DeepStream SDK.</p>
+
+    <h3>
+      Remove all previous DeepStream installations
+    </h3>
+    <div class="shell-code">
+      <pre>$ sudo rm -rf /usr/local/deepstream /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libgstnv* /usr/bin/deepstream* /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnvdsgst* /usr/lib/x86_64-linux-gnu/gstreamer-1.0/deepstream* /opt/nvidia/deepstream/deepstream*</pre>
+      <pre>$ sudo rm -rf /usr/lib/x86_64-linux-gnu/libv41/plugins/libcuvidv4l2_plugin.so</pre>
+    </div>
+
+    <p>Enter the following commands to remove all previous DeepStream 3.0 or prior installations:</p>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+</div>
+
+
+
+</body>
+</html>
