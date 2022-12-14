@@ -1,11 +1,18 @@
 .left-nav {
-    float: left;
+    position: fixed;
     padding-left: 30px;
     padding-top: 30px;
-    width: 300px;
-    background-color: pink;
+    width: 200px;
+    height: 100vh;
     line-height: 30px;
 }
+
+.left-nav .nav-main {
+    width: 200px;
+    height: 90%;
+    border-right: 1px solid #666666;
+}
+
 .left-nav a {
     text-decoration: none;
     color: #333333;
@@ -23,7 +30,8 @@
 }
 
 .doc-body {
-    font-size: 18px;
+    margin-top: 60px;
+    font-size: 16px;
     padding-top: 30px;
 }
 
@@ -32,8 +40,48 @@
     color: darkslateblue;
 }
 
+.doc-body .section {
+
+}
+
+.doc-body .subsection {
+
+}
+
+.doc-body .subsection ol li ol{
+    list-style-type: lower-alpha;
+}
+
 .shell-code pre {
     width: 800px;
     font-size: 14px;
     white-space: pre-wrap;
 }
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -90px;
+    visibility: hidden;
+}
+
+.dot-ul li {
+    padding-left: 1em;
+    list-style-type: disc;
+    list-style-position: inside;
+
+}
+
+.circle-ul li {
+    padding-left: 1em;
+    list-style-type: circle;
+    list-style-position: inside;
+
+}
+
+@media screen and (max-width: 1680px) {
+    .left-nav {
+        display: none;
+    }
+}
+

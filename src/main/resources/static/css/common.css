@@ -1,9 +1,14 @@
 .wrapper {
+    min-width: 960px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
     height: 60px;
     background-color: #333333;
 }
@@ -48,4 +53,13 @@
     height: 52px;
     background-color: #333333;
 }
+
+.code-block {
+    padding: 2px 5px;
+    border: 1px solid rgba(0,0,0,0.3);
+    color: #e74c37;
+    font-family: monospace;
+    font-size: 14px;
+}
+
 
