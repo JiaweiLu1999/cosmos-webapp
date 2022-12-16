@@ -1,5 +1,7 @@
 .proj-title {
-    margin-top: 80px;
+    margin-top: 70px;
+    text-align: center;
+    color: #222;
 }
 
 .proj-name {
@@ -10,4 +12,104 @@
 .proj-subtitle {
     font-size: 24px;
     font-weight: 900;
+}
+
+.slideshow-container {
+    margin: 10px auto;
+    width: 960px;
+    height: 660px;
+
+    background-color: #666666;
+    text-align: center;
+}
+
+.slide {
+    width: 960px;
+    height: 540px;
+    display: none;
+    background-repeat: no-repeat;
+}
+
+.slide img {
+    width: 960px;
+    height: 540px;
+}
+
+.img-number {
+    color: #f2f2f2;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.slide-tool {
+    width: 960px;
+    height: 30px;
+}
+
+.btn-container {
+    width: 200px;
+    float: left;
+}
+
+.player-container {
+    width: 560px;
+    float: left;
+    text-align: center;
+}
+
+.player-text {
+    line-height: 30px;
+}
+
+.slide-dot-container {
+    height: 30px;
+    float: right;
+}
+
+.slide-dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    border: 2px solid #333333;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+
+
+.active {
+    background-color: #333333;
+}
+
+.btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    color: white;
+    background-color: #333;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background-color: brown;
+}
+
+.slide-dot:hover {
+    background-color: brown;
+}
+
+
+@keyframes fade {
+    from {opacity: .2}
+    to {opacity: 1}
 }

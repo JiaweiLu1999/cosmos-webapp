@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Documentation | COSMOS Sub-project</title>
-  <link rel="stylesheet" href="../static/css/base.css">
-  <link rel="stylesheet" href="../static/css/common.css">
-  <link rel="stylesheet" href="../static/css/documentation.css">
-  <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/documentation.css">
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
 <div class="nav">
   <div class="wrapper">
-    <div class="logo"></div>
+    <a class="logo" th:href="@{/}"></a>
     <ul>
-      <li><a href="demo.html">Real-time Demo</a></li>
-      <li><a href="resource.html">Resource</a></li>
-      <li><a href="documentation.html">Documentation</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="index.html">Home</a></li>
+      <li><a th:href="@{/demo}">Real-time Demo</a></li>
+      <li><a th:href="@{/resource}">Resource</a></li>
+      <li><a th:href="@{/documentation}">Documentation</a></li>
+      <li><a th:href="@{/about}">About</a></li>
+      <li><a th:href="@{/}">Home</a></li>
     </ul>
   </div>
 </div>
@@ -362,7 +362,7 @@
       <div class="subsection dot-ul">
         <h3>Application Architecture</h3>
         <p>The image below shows the architecture of the NVIDIA DeepStream reference application.</p>
-        <img src="../static/images/DS_reference_ds_app.png" alt="*">
+        <img src="/images/DS_reference_ds_app.png" alt="*">
         <p>The DeepStream reference application is a GStreamer based solution and consists of set of GStreamer plugins encapsulating low-level APIs to form a complete graph. The reference application has capability to accept input from various sources like camera, RTSP input, encoded file input, and additionally supports multi stream/source capability. The list of GStreamer plugins implemented by NVIDIA and provided as a part of DeepStream SDK include:</p>
         <ul class="dot-ul">
           <li>The Stream Muxer plugin (<span class="code-block">Gst-nvstreammux</span>) to form a batch of buffers from multiple input sources.</li>
