@@ -67,6 +67,27 @@
     line-height: 30px;
 }
 
+.player {
+    width: 60px;
+    height: 30px;
+    border: none;
+    color: white;
+    background-color: #333;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.player:hover {
+    width: 100px;
+    background-color: brown;
+}
+
+#btn-stop {
+    display: none;
+}
+
+
+
 .slide-dot-container {
     height: 30px;
     float: right;
