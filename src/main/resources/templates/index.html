@@ -16,11 +16,11 @@
 <body>
 
 <!--This is navigation bar-->
-<div class="nav">
+<div id="top-nav" class="nav">
   <div class="wrapper">
     <a class="logo" th:href="@{/}"></a>
     <ul>
-      <li><a th:href="@{/demo}">Real-time Demo</a></li>
+      <li><a th:href="@{/demo}">Demo</a></li>
       <li><a th:href="@{/resource}">Resource</a></li>
       <li><a th:href="@{/documentation}">Documentation</a></li>
       <li><a th:href="@{/about}">About</a></li>
@@ -63,7 +63,7 @@
       <button class="player" onclick="startShow()">PLAY</button>
     </div>
     <div id="btn-stop" class="player-text">
-      <button class="player" onclick="stopShow()">STOP</button>
+      <button id="btn-stop-body" class="player" onclick="stopShow()">STOP</button>
     </div>
   </div>
 
@@ -90,7 +90,9 @@
 
     function startShow() {
         document.getElementById("btn-play").style.display = "none";
+
         document.getElementById("btn-stop").style.display = "block";
+        document.getElementById("btn-stop-body").style.width = "100px";
         autoShow();
     }
 

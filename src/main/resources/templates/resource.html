@@ -2,24 +2,67 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Resource | COSMOS Sub-project</title>
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/resource.css">
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+
+
+<!--  <link rel="stylesheet" href="../static/css/resource.css">-->
+<!--  <link rel="stylesheet" href="../static/css/base.css">-->
+<!--  <link rel="stylesheet" href="../static/css/common.css">-->
 </head>
 <body>
 
 <!--This is navigation bar-->
-<div class="nav">
-  <div class="wrapper">
-    <a class="logo" th:href="@{/}"></a>
+<div th:replace="index.html::#top-nav" ></div>
+
+<!--<div id="top-nav" class="nav">-->
+<!--  <div class="wrapper">-->
+<!--    <a class="logo" th:href="@{/}"></a>-->
+<!--    <ul>-->
+<!--      <li><a th:href="@{/demo}">Demo</a></li>-->
+<!--      <li><a th:href="@{/resource}">Resource</a></li>-->
+<!--      <li><a th:href="@{/documentation}">Documentation</a></li>-->
+<!--      <li><a th:href="@{/about}">About</a></li>-->
+<!--      <li><a th:href="@{/}">Home</a></li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="resource-body wrapper">
+  <div class="">
+    <h2>Paper</h2>
     <ul>
-      <li><a th:href="@{/demo}">Real-time Demo</a></li>
-      <li><a th:href="@{/resource}">Resource</a></li>
-      <li><a th:href="@{/documentation}">Documentation</a></li>
-      <li><a th:href="@{/about}">About</a></li>
-      <li><a th:href="@{/}">Home</a></li>
+      <li>Real-time Multi-Camera Analytics for Traffic Information Extraction and Visualization</li>
     </ul>
+
+    <h2>Report</h2>
+    <ul>
+      <li>2022 Summer Report</li>
+      <li>2022 Fall Report</li>
+    </ul>
+
+    <h2>GitHub</h2>
+    <ul>
+      <li>ZK Lab: Project Repo</li>
+      <li>WiMNet Lab: MQTT Repo</li>
+    </ul>
+
+    <h2>Slides</h2>
+    <ul>
+      <li>2022 Summer Presentation</li>
+    </ul>
+
+    <h2>Log</h2>
+    <ul>
+      <li>2022 Summer + Fall Log</li>
+    </ul>
+
+
   </div>
+
 </div>
 
 

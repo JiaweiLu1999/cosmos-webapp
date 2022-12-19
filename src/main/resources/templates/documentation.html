@@ -10,18 +10,7 @@
 </head>
 <body>
 
-<div class="nav">
-  <div class="wrapper">
-    <a class="logo" th:href="@{/}"></a>
-    <ul>
-      <li><a th:href="@{/demo}">Real-time Demo</a></li>
-      <li><a th:href="@{/resource}">Resource</a></li>
-      <li><a th:href="@{/documentation}">Documentation</a></li>
-      <li><a th:href="@{/about}">About</a></li>
-      <li><a th:href="@{/}">Home</a></li>
-    </ul>
-  </div>
-</div>
+<div th:replace="index.html::#top-nav" ></div>
 
 <div class="left-nav">
   <div class="nav-main">
