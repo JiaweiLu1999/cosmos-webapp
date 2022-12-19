@@ -19,8 +19,8 @@
 }
 
 .left-nav ul li {
-    font-size: 20px;
-    font-weight: 700;line-height: 20px;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .left-nav ul li ul li {
@@ -39,7 +39,7 @@
 .demo-body {
     margin-top: 60px;
     padding-top: 30px;
-    background-color: #666666;
+    text-align: center;
 }
 
 
