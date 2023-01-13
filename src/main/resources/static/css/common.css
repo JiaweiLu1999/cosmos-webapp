@@ -27,6 +27,7 @@
     float: right;
     line-height: 60px;
 }
+
 .nav .wrapper li:first-child a {
     border-right: none;
 }
@@ -57,7 +58,7 @@
 
 .code-block {
     padding: 2px 5px;
-    border: 1px solid rgba(0,0,0,0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
     color: #e74c37;
     font-family: monospace;
     font-size: 14px;

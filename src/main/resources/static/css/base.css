@@ -11,7 +11,7 @@ body {
 }
 
 ol {
-    list-style-position:inside;
+    list-style-position: inside;
 }
 
 
@@ -42,6 +42,7 @@ input {
     content: "";
     display: table;
 }
+
 .clearfix::after {
     clear: both;
 }

@@ -1,84 +1,87 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Documentation | COSMOS Sub-project</title>
-  <link rel="stylesheet" href="/css/base.css">
-  <link rel="stylesheet" href="/css/common.css">
-  <link rel="stylesheet" href="/css/documentation.css">
-  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>Documentation | COSMOS Sub-project</title>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/documentation.css">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
-<div th:replace="index.html::#top-nav" ></div>
+<div th:replace="index.html::#top-nav"></div>
 
 <div class="left-nav">
-  <div class="nav-main">
-    <ul>
-      <li>
-        <a href="#installation">Installation</a>
+    <div class="nav-main">
         <ul>
-          <li><a href="#deepstream-install">DeepStream SDK</a></li>
-          <li><a href="#opencv-install">OpenCV</a></li>
-          <li><a href="#python-binding-install">Python Bindings</a></li>
-          <li><a href="#calibration-install">Calibration Plugin</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#usage">Get Started</a>
-        <ul>
-          <li><a href="#deepstream-app-start">Deepstream-app</a></li>
-          <li><a href="#python-app-start">Python Application</a></li>
-        </ul>
-      </li>
+            <li>
+                <a href="#installation">Installation</a>
+                <ul>
+                    <li><a href="#deepstream-install">DeepStream SDK</a></li>
+                    <li><a href="#opencv-install">OpenCV</a></li>
+                    <li><a href="#python-binding-install">Python Bindings</a></li>
+                    <li><a href="#calibration-install">Calibration Plugin</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#usage">Get Started</a>
+                <ul>
+                    <li><a href="#deepstream-app-start">Deepstream-app</a></li>
+                    <li><a href="#python-app-start">Python Application</a></li>
+                </ul>
+            </li>
 
-    </ul>
-  </div>
+        </ul>
+    </div>
 </div>
 
 
 <div class="doc-body wrapper">
 
-<!--  Installation-->
-  <div>
-    <a class="anchor" id="installation"></a>
-    <h1>Installation</h1>
-    <!--  dGPU Setup for Ubuntu-->
-    <div class="section">
-      <a class="anchor" id="deepstream-install"></a>
-      <h2><a target="_blank"
-             href="https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_Quickstart.html">
-        dGPU Setup for Ubuntu
-      </a></h2>
-      <p>This section explains how to prepare an Ubuntu x86_64 system with NVIDIA dGPU devices before installing the DeepStream SDK.</p>
+    <!--  Installation-->
+    <div>
+        <a class="anchor" id="installation"></a>
+        <h1>Installation</h1>
+        <!--  dGPU Setup for Ubuntu-->
+        <div class="section">
+            <a class="anchor" id="deepstream-install"></a>
+            <h2><a target="_blank"
+                   href="https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_Quickstart.html">
+                dGPU Setup for Ubuntu
+            </a></h2>
+            <p>This section explains how to prepare an Ubuntu x86_64 system with NVIDIA dGPU devices before installing
+                the DeepStream SDK.</p>
 
 
-      <div class="subsection">
-        <h3>
-          Remove all previous DeepStream installations
-        </h3>
-        <div class="shell-code">
-          <pre>$ sudo rm -rf /usr/local/deepstream /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libgstnv* /usr/bin/deepstream* /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnvdsgst* /usr/lib/x86_64-linux-gnu/gstreamer-1.0/deepstream* /opt/nvidia/deepstream/deepstream*</pre>
-          <pre>$ sudo rm -rf /usr/lib/x86_64-linux-gnu/libv41/plugins/libcuvidv4l2_plugin.so</pre>
-        </div>
+            <div class="subsection">
+                <h3>
+                    Remove all previous DeepStream installations
+                </h3>
+                <div class="shell-code">
+                    <pre>$ sudo rm -rf /usr/local/deepstream /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libgstnv* /usr/bin/deepstream* /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libnvdsgst* /usr/lib/x86_64-linux-gnu/gstreamer-1.0/deepstream* /opt/nvidia/deepstream/deepstream*</pre>
+                    <pre>$ sudo rm -rf /usr/lib/x86_64-linux-gnu/libv41/plugins/libcuvidv4l2_plugin.so</pre>
+                </div>
 
-        <p>Enter the following commands to remove all previous DeepStream 3.0 or prior installations:</p>
-        <ul>
-          <li></li>
-        </ul>
+                <p>Enter the following commands to remove all previous DeepStream 3.0 or prior installations:</p>
+                <ul>
+                    <li></li>
+                </ul>
 
-        <p>To remove DeepStream 4.0 or later installations</p>
-        <ol>
-          <li>Open the <span class="code-block">uninstall.sh</span> file in <span class="code-block">/opt/nvidia/deepstream/deepstream/</span></li>
-          <li>Set <span class="code-block">PREV_DS_VER</span> as 4.0</li>
-          <li>Run the following script as <span class="code-block">sudo ./uninstall.sh</span></li>
-        </ol>
-      </div>
+                <p>To remove DeepStream 4.0 or later installations</p>
+                <ol>
+                    <li>Open the <span class="code-block">uninstall.sh</span> file in <span class="code-block">/opt/nvidia/deepstream/deepstream/</span>
+                    </li>
+                    <li>Set <span class="code-block">PREV_DS_VER</span> as 4.0</li>
+                    <li>Run the following script as <span class="code-block">sudo ./uninstall.sh</span></li>
+                </ol>
+            </div>
 
-      <div class="subsection">
-        <h3>Install Dependencies</h3>
-        <p>Enter the following commands to install the necessary packages before installing the DeepStream SDK:</p>
-        <div class="shell-code">
+            <div class="subsection">
+                <h3>Install Dependencies</h3>
+                <p>Enter the following commands to install the necessary packages before installing the DeepStream
+                    SDK:</p>
+                <div class="shell-code">
           <pre>$ sudo apt install \
   libssl1.1 \
   libgstreamer1.0-0 \
@@ -95,410 +98,477 @@
   make \
   git \
   python3</pre>
-        </div>
+                </div>
 
-        <h4>Install CUDA Toolkit 11.7.1 (CUDA 11.7 Update 1) and NVIDIA driver 515.65.01</h4>
-        <p>Run the following command to install TensorRT 8.4.1.5:</p>
-        <div class="shell-code">
+                <h4>Install CUDA Toolkit 11.7.1 (CUDA 11.7 Update 1) and NVIDIA driver 515.65.01</h4>
+                <p>Run the following command to install TensorRT 8.4.1.5:</p>
+                <div class="shell-code">
           <pre>$ sudo apt-get install libnvinfer8=8.4.1-1+cuda11.6 libnvinfer-plugin8=8.4.1-1+cuda11.6 libnvparsers8=8.4.1-1+cuda11.6 \
     libnvonnxparsers8=8.4.1-1+cuda11.6 libnvinfer-bin=8.4.1-1+cuda11.6 libnvinfer-dev=8.4.1-1+cuda11.6 \
     libnvinfer-plugin-dev=8.4.1-1+cuda11.6 libnvparsers-dev=8.4.1-1+cuda11.6 libnvonnxparsers-dev=8.4.1-1+cuda11.6 \
     libnvinfer-samples=8.4.1-1+cuda11.6 libcudnn8=8.4.1.50-1+cuda11.6 libcudnn8-dev=8.4.1.50-1+cuda11.6 \
     python3-libnvinfer=8.4.1-1+cuda11.6 python3-libnvinfer-dev=8.4.1-1+cuda11.6</pre>
+                </div>
+
+                <h4>Install librdkafka (to enable Kafka protocol adaptor for message broker)</h4>
+                <ol>
+                    <li>
+                        Clone the librdkafka repository from GitHub:
+                        <div class="shell-code">
+                            <pre>$ git clone https://github.com/edenhill/librdkafka.git</pre>
+                        </div>
+                    </li>
+
+                    <li>
+                        Configure and build the library:
+                        <div class="shell-code">
+                            <pre>$ cd librdkafka</pre>
+                            <pre>$ git reset --hard 7101c2310341ab3f4675fc565f64f0967e135a6a</pre>
+                            <pre>$ ./configure</pre>
+                            <pre>$ sudo make</pre>
+                            <pre>$ sudo make install</pre>
+                        </div>
+                    </li>
+
+                    <li>
+                        Copy the generated libraries to the deepstream directory:
+                        <div class="shell-code">
+                            <pre>$ sudo mkdir -p /opt/nvidia/deepstream/deepstream-6.1/lib</pre>
+                            <pre>$ sudo cp /usr/local/lib/librdkafka* /opt/nvidia/deepstream/deepstream-6.1/lib</pre>
+                        </div>
+                    </li>
+
+
+                </ol>
+            </div>
+
+            <div class="subsection">
+                <h3>Install the DeepStream SDK</h3>
+                <ol>
+                    <li>
+                        Download the DeepStream 6.1.1 dGPU Debian package <span class="code-block">deepstream-6.1_6.1.1-1_amd64.deb</span>
+                        from <br/>
+                        <a href="https://developer.nvidia.com/deepstream-6.1_6.1.1-1_amd64.deb">https://developer.nvidia.com/deepstream-6.1_6.1.1-1_amd64.deb</a>
+                    </li>
+                    <li>
+                        Enter the command:
+                        <div class="shell-code">
+                            <pre>$ sudo apt-get install ./deepstream-6.1_6.1.1-1_amd64.deb</pre>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
         </div>
 
-        <h4>Install librdkafka (to enable Kafka protocol adaptor for message broker)</h4>
-        <ol>
-          <li>
-            Clone the librdkafka repository from GitHub:
-            <div class="shell-code">
-              <pre>$ git clone https://github.com/edenhill/librdkafka.git</pre>
+        <!--  OpenCV Installation for Ubuntu-->
+        <div class="section">
+            <a class="anchor" id="opencv-install"></a>
+            <h2><a target="_blank"
+                   href="https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html">
+                Install OpenCV for Ubuntu
+            </a></h2>
+            <div class="subsection">
+                <ol>
+                    <li>
+                        Install compiler and build tools
+                        <div class="shell-code">
+                            <pre>$ sudo apt update && sudo apt install -y cmake g++ wget unzip</pre>
+                        </div>
+                    </li>
+
+                    <li>
+                        Download sources
+                        <div class="shell-code">
+                            <pre>$ wget -O opencv.zip https://github.com/opencv/opencv/archive/4.x.zip</pre>
+                            <pre>$ wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.x.zip</pre>
+                            <pre>$ unzip opencv.zip</pre>
+                            <pre>$ unzip opencv_contrib.zip</pre>
+                        </div>
+                    </li>
+
+                    <li>
+                        Download sources
+                        <div class="shell-code">
+                            <pre>$ wget -O opencv.zip https://github.com/opencv/opencv/archive/4.x.zip</pre>
+                            <pre>$ wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.x.zip</pre>
+                            <pre>$ unzip opencv.zip</pre>
+                            <pre>$ unzip opencv_contrib.zip</pre>
+                        </div>
+                    </li>
+
+                    <li>
+                        Create build directory:
+                        <div class="shell-code">
+                            <pre>$ mkdir -p build && cd build</pre>
+                        </div>
+                    </li>
+
+                    <li>
+                        Configure - generate build scripts for the preferred build system:
+                        <div class="shell-code">
+                            <pre>$ cmake -DWITH_CUDA=ON -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib-4.x/modules ../opencv-4.x</pre>
+                        </div>
+                    </li>
+
+                    <li>
+                        Build - run actual compilation process
+                        <div class="shell-code">
+                            <pre>$ sudo make -j$(nproc)</pre>
+                        </div>
+                    </li>
+
+                    <li>
+                        Check build results:
+                        <p>After successful build you will find libraries in the <span
+                                class="code-block">build/lib</span> directory and executables (test, samples, apps) in
+                            the <span class="code-block">build/bin</span> directory:</p>
+                        <div class="shell-code">
+                            <pre>$ ls bin</pre>
+                            <pre>$ ls lib</pre>
+                        </div>
+                    </li>
+                </ol>
             </div>
-          </li>
+        </div>
 
-          <li>
-            Configure and build the library:
-            <div class="shell-code">
-              <pre>$ cd librdkafka</pre>
-              <pre>$ git reset --hard 7101c2310341ab3f4675fc565f64f0967e135a6a</pre>
-              <pre>$ ./configure</pre>
-              <pre>$ sudo make</pre>
-              <pre>$ sudo make install</pre>
-            </div>
-          </li>
+        <!--  DeepStream Python Bindings Installation-->
+        <div class="section">
+            <a class="anchor" id="python-binding-install"></a>
+            <h2><a target="_blank"
+                   href="https://github.com/NVIDIA-AI-IOT/deepstream_python_apps">
+                Install DeepStream Python Bindings
+            </a></h2>
+            <div class="subsection">
+                <ol>
+                    <li>Prerequisites
+                        <ol>
+                            <li>Deepstream SDK</li>
 
-          <li>
-            Copy the generated libraries to the deepstream directory:
-            <div class="shell-code">
-              <pre>$ sudo mkdir -p /opt/nvidia/deepstream/deepstream-6.1/lib</pre>
-              <pre>$ sudo cp /usr/local/lib/librdkafka* /opt/nvidia/deepstream/deepstream-6.1/lib</pre>
-            </div>
-          </li>
-
-
-
-        </ol>
-      </div>
-
-      <div class="subsection">
-        <h3>Install the DeepStream SDK</h3>
-        <ol>
-          <li>
-            Download the DeepStream 6.1.1 dGPU Debian package <span class="code-block">deepstream-6.1_6.1.1-1_amd64.deb</span> from <br/>
-            <a href="https://developer.nvidia.com/deepstream-6.1_6.1.1-1_amd64.deb">https://developer.nvidia.com/deepstream-6.1_6.1.1-1_amd64.deb</a>
-          </li>
-          <li>
-            Enter the command:
-            <div class="shell-code">
-              <pre>$ sudo apt-get install ./deepstream-6.1_6.1.1-1_amd64.deb</pre>
-            </div>
-          </li>
-        </ol>
-      </div>
-
-    </div>
-
-    <!--  OpenCV Installation for Ubuntu-->
-    <div class="section">
-      <a class="anchor" id="opencv-install"></a>
-      <h2><a target="_blank"
-             href="https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html">
-        Install OpenCV for Ubuntu
-      </a></h2>
-      <div class="subsection">
-        <ol>
-          <li>
-            Install compiler and build tools
-            <div class="shell-code">
-              <pre>$ sudo apt update && sudo apt install -y cmake g++ wget unzip</pre>
-            </div>
-          </li>
-
-          <li>
-            Download sources
-            <div class="shell-code">
-              <pre>$ wget -O opencv.zip https://github.com/opencv/opencv/archive/4.x.zip</pre>
-              <pre>$ wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.x.zip</pre>
-              <pre>$ unzip opencv.zip</pre>
-              <pre>$ unzip opencv_contrib.zip</pre>
-            </div>
-          </li>
-
-          <li>
-            Download sources
-              <div class="shell-code">
-                <pre>$ wget -O opencv.zip https://github.com/opencv/opencv/archive/4.x.zip</pre>
-                <pre>$ wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.x.zip</pre>
-                <pre>$ unzip opencv.zip</pre>
-                <pre>$ unzip opencv_contrib.zip</pre>
-              </div>
-          </li>
-
-          <li>
-            Create build directory:
-            <div class="shell-code">
-              <pre>$ mkdir -p build && cd build</pre>
-            </div>
-          </li>
-
-          <li>
-            Configure - generate build scripts for the preferred build system:
-            <div class="shell-code">
-              <pre>$ cmake -DWITH_CUDA=ON -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib-4.x/modules ../opencv-4.x</pre>
-            </div>
-          </li>
-
-          <li>
-            Build - run actual compilation process
-            <div class="shell-code">
-              <pre>$ sudo make -j$(nproc)</pre>
-            </div>
-          </li>
-
-          <li>
-            Check build results:
-            <p>After successful build you will find libraries in the <span class="code-block">build/lib</span> directory and executables (test, samples, apps) in the <span class="code-block">build/bin</span> directory:</p>
-            <div class="shell-code">
-              <pre>$ ls bin</pre>
-              <pre>$ ls lib</pre>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </div>
-
-    <!--  DeepStream Python Bindings Installation-->
-    <div class="section">
-      <a class="anchor" id="python-binding-install"></a>
-      <h2><a target="_blank"
-             href="https://github.com/NVIDIA-AI-IOT/deepstream_python_apps">
-        Install DeepStream Python Bindings
-      </a></h2>
-      <div class="subsection">
-        <ol>
-          <li>Prerequisites
-            <ol>
-              <li>Deepstream SDK</li>
-
-              <li>Base dependencies
-                <p>To compile bindings on Ubuntu - 20.04 [use python-3.8, python-3.6 will not work]:</p>
-                <div class="shell-code">
+                            <li>Base dependencies
+                                <p>To compile bindings on Ubuntu - 20.04 [use python-3.8, python-3.6 will not work]:</p>
+                                <div class="shell-code">
                   <pre>$ sudo apt install python3-gi python3-dev python3-gst-1.0 python-gi-dev git python-dev \
   python3 python3-pip python3.8-dev cmake g++ build-essential libglib2.0-dev \
   libglib2.0-dev-bin libgstreamer1.0-dev libtool m4 autoconf automake libgirepository1.0-dev libcairo2-dev</pre>
-                </div>
-              </li>
+                                </div>
+                            </li>
 
-              <li>Initialization of submodules
-                <div class="shell-code">
-                  <pre>$ cd /opt/nvidia/deepstream/deepstream-6.1/sources</pre>
-                  <pre>$ git clone https://github.com/NVIDIA-AI-IOT/deepstream_python_apps</pre>
-                  <pre>$ cd deepstream_python_apps</pre>
-                  <pre>$ git submodule update --init</pre>
-                </div>
-              </li>
+                            <li>Initialization of submodules
+                                <div class="shell-code">
+                                    <pre>$ cd /opt/nvidia/deepstream/deepstream-6.1/sources</pre>
+                                    <pre>$ git clone https://github.com/NVIDIA-AI-IOT/deepstream_python_apps</pre>
+                                    <pre>$ cd deepstream_python_apps</pre>
+                                    <pre>$ git submodule update --init</pre>
+                                </div>
+                            </li>
 
-              <li>Installing Gst-python
-                <p>Following commands ensure we add the new certificates that gst-python git server now uses:</p>
-                <div class="shell-code">
-                  <pre>$ sudo apt-get install -y apt-transport-https ca-certificates -y</pre>
-                  <pre>$ sudo update-ca-certificates</pre>
-                </div>
-                <p>Build and install gst-python:</p>
-                <div class="shell-code">
-                  <pre>$ cd 3rdparty/gst-python/</pre>
-                  <pre>$ sudo ./autogen.sh</pre>
-                  <pre>$ sudo make</pre>
-                  <pre>$ sudo make install</pre>
-                </div>
-              </li>
-            </ol>
-          </li>
+                            <li>Installing Gst-python
+                                <p>Following commands ensure we add the new certificates that gst-python git server now
+                                    uses:</p>
+                                <div class="shell-code">
+                                    <pre>$ sudo apt-get install -y apt-transport-https ca-certificates -y</pre>
+                                    <pre>$ sudo update-ca-certificates</pre>
+                                </div>
+                                <p>Build and install gst-python:</p>
+                                <div class="shell-code">
+                                    <pre>$ cd 3rdparty/gst-python/</pre>
+                                    <pre>$ sudo ./autogen.sh</pre>
+                                    <pre>$ sudo make</pre>
+                                    <pre>$ sudo make install</pre>
+                                </div>
+                            </li>
+                        </ol>
+                    </li>
 
-          <li>
-            Compiling the bindings: Quick build (x86-ubuntu-20.04 | python 3.8 | Deepstream 6.1.1)
-            <div class="shell-code">
-              <pre>$ cd deepstream_python_apps/bindings</pre>
-              <pre>$ mkdir build</pre>
-              <pre>$ cd build</pre>
-              <pre>$ cmake ..</pre>
-              <pre>$ make</pre>
+                    <li>
+                        Compiling the bindings: Quick build (x86-ubuntu-20.04 | python 3.8 | Deepstream 6.1.1)
+                        <div class="shell-code">
+                            <pre>$ cd deepstream_python_apps/bindings</pre>
+                            <pre>$ mkdir build</pre>
+                            <pre>$ cd build</pre>
+                            <pre>$ cmake ..</pre>
+                            <pre>$ make</pre>
+                        </div>
+                    </li>
+
+                    <li>
+                        Installing the bindings (pip wheel)
+                        <div class="shell-code">
+                            <pre>$ pip3 install ./pyds-1.1.4-py3-none*.whl</pre>
+                        </div>
+                    </li>
+
+                </ol>
             </div>
-          </li>
-
-          <li>
-            Installing the bindings (pip wheel)
-            <div class="shell-code">
-              <pre>$ pip3 install ./pyds-1.1.4-py3-none*.whl</pre>
-            </div>
-          </li>
-
-        </ol>
-      </div>
-    </div>
-
-    <!--  Customized GStreamer Plugin for Calibration Installation-->
-    <div class="section">
-      <a class="anchor" id="calibration-install"></a>
-      <h2><a target="_blank"
-             href="https://github.com/NVIDIA-AI-IOT/deepstream_python_apps">
-        Install Customized GStreamer Plugin for Calibration
-      </a></h2>
-      <div class="subsection">
-        <ol>
-          <li>Pre-requisites:
-            <ol>
-              <li>GStreamer-1.0 Development package</li>
-              <li>GStreamer-1.0 Base Plugins Development package</li>
-              <li>OpenCV Development package</li>
-            </ol>
-            Install using
-            <div class="shell-code">
-              <pre>$ sudo apt-get install libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libopencv-dev</pre>
-            </div>
-          </li>
-
-          <li>Compiling and installing the plugin
-            <ol>
-              <li>Export or set in Makefile the appropriate cuda version using <span class="code-block">CUDA_VER</span></li>
-              <li>Run
-                <div class="shell-code">
-                  <pre>$ sudo make </pre>
-                </div>
-              </li>
-              <li>Run
-                <div class="shell-code">
-                  <pre>$ sudo make install</pre>
-                </div>
-              </li>
-            </ol>
-          </li>
-        </ol>
-      </div>
-    </div>
-
-  </div>
-
-<!--  Usage-->
-  <div>
-    <a class="anchor" id="usage"></a>
-    <h1>Get Started</h1>
-
-<!--    deepstream-app-->
-    <div class="section">
-      <a class="anchor" id="deepstream-app-start"></a>
-      <h2>DeepStream Reference Application: deepstream-app</h2>
-      <div class="subsection dot-ul">
-        <h3>Application Architecture</h3>
-        <p>The image below shows the architecture of the NVIDIA DeepStream reference application.</p>
-        <img src="/images/DS_reference_ds_app.png" alt="*">
-        <p>The DeepStream reference application is a GStreamer based solution and consists of set of GStreamer plugins encapsulating low-level APIs to form a complete graph. The reference application has capability to accept input from various sources like camera, RTSP input, encoded file input, and additionally supports multi stream/source capability. The list of GStreamer plugins implemented by NVIDIA and provided as a part of DeepStream SDK include:</p>
-        <ul class="dot-ul">
-          <li>The Stream Muxer plugin (<span class="code-block">Gst-nvstreammux</span>) to form a batch of buffers from multiple input sources.</li>
-          <li>The Preprocess plugin (<span class="code-block">Gst-nvdspreprocess</span>) for preprocessing on the pre-defined ROIs for primary inferencing.</li>
-          <li>The NVIDIA TensorRT based plugin (<span class="code-block">Gst-nvinfer</span>) for primary and secondary (attribute classification of primary objects) detection and classification respectively.</li>
-          <li>The OpenCV based tracker plugin (<span class="code-block">Gst-nvtracker</span>) for object tracking with unique ID.</li>
-          <li>The Multi Stream Tiler plugin (<span class="code-block">Gst-nvmultistreamtiler</span>) for forming 2D array of frames.</li>
-          <li>The Onscreen Display (OSD) plugin (<span class="code-block">Gst-nvdsosd</span>) to draw shaded boxes, rectangles and text on the composited frame using the generated metadata.</li>
-          <li>The Message Converter (<span class="code-block">Gst-nvmsgconv</span>) and Message Broker (<span class="code-block">Gst-nvmsgbroker</span>) plugins in combination to send analytics data to a server in the Cloud.</li>
-        </ul>
-      </div>
-
-      <div class="subsection">
-        <h3>Run the Reference Application</h3>
-        <div class="shell-code">
-          <pre>$ deepstream-app -c <span class="code-block">path-to-config-file</span>  </pre>
         </div>
-      </div>
-    </div>
 
-    <div class="section">
-      <a class="anchor" id="python-app-start"></a>
-      <h2>Real-time Detection and Tracking Application for 12th-floor Camera</h2>
-      <div class="subsection">
-        <ol>
-          <li>Environment
-            <ul class="dot-ul">
-              <li>Ubuntu 20.04</li>
-              <li>DeepStream SDK 6.1</li>
-              <li>Python 3.8</li>
-              <li>DeepStreamSDK python bindings</li>
-              <li>Gst Python v1.16.2
-                If missing, install with the following steps:
-                <div class="shell-code">
-                  <pre>$ sudo apt-get install python-gi-dev</pre>
-                  <pre>$ export GST_LIBS="-lgstreamer-1.0 -lgobject-2.0 -lglib-2.0"</pre>
-                  <pre>$ export GST_CFLAGS="-pthread -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include"</pre>
-                  <pre>$ git clone https://github.com/GStreamer/gst-python.git</pre>
-                  <pre>$ cd gst-python</pre>
-                  <pre>$ git checkout 5343aeb</pre>
-                  <pre>$ ./autogen.sh PYTHON=python3</pre>
-                  <pre>$ ./configure PYTHON=python3</pre>
-                  <pre>$ make</pre>
-                  <pre>$ sudo make install</pre>
-                </div>
-              </li>
-            </ul>
+        <!--  Customized GStreamer Plugin for Calibration Installation-->
+        <div class="section">
+            <a class="anchor" id="calibration-install"></a>
+            <h2><a target="_blank"
+                   href="https://github.com/NVIDIA-AI-IOT/deepstream_python_apps">
+                Install Customized GStreamer Plugin for Calibration
+            </a></h2>
+            <div class="subsection">
+                <ol>
+                    <li>Pre-requisites:
+                        <ol>
+                            <li>GStreamer-1.0 Development package</li>
+                            <li>GStreamer-1.0 Base Plugins Development package</li>
+                            <li>OpenCV Development package</li>
+                        </ol>
+                        Install using
+                        <div class="shell-code">
+                            <pre>$ sudo apt-get install libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libopencv-dev</pre>
+                        </div>
+                    </li>
 
-          </li>
-
-          <li>Pipeline Construction
-            <h3>Outline:</h3>
-            <ul class="dot-ul">
-              <li>Read RTSP video stream from 12th-floor cameras</li>
-              <li>Form a batch of buffers from multiple input sources</li>
-              <li>Convert input frames from NV12 to RGBA</li>
-              <li>Pre-process to calibrate the input frames</li>
-              <li>Perform object detection and tracking</li>
-              <li>Draw the bounding boxes</li>
-              <li>Save the output to a file</li>
-              <li>Build the pipeline</li>
-            </ul>
-
-            <h3>Read RTSP video stream from 12th-floor cameras</h3>
-            <ul class="dot-ul">
-              <li>Create a source GstBin to abstract this bin's content from the rest of the pipeline by <span class="code-block">Gst.Bin.new()</span>.</li>
-              <li>Create a GStreamer source element called uri-decode-bin for reading from the RTSP stream by <span class="code-block">Gst.ElementFactory.make()</span>.
-                (<span class="code-block">make_elm_or_print_err()</span> is a wrapper function for this API.) Set the RTSP uri by <span class="code-block">set_property()</span></li>
-              <li>Add the uri-decode-bin to GstBin by <span class="code-block">Gst.Bin.add()</span> and get it by <span class="code-block">get_static_pad()</span>.</li>
-            </ul>
-
-            <h3>Form a batch of buffers from multiple input sources</h3>
-            <p>Although the input in this python app is only one, I add streammux if we need to deal with multi-stream in the future.</p>
-            <ul class="dot-ul">
-              <li>Create nvstreammux instance to form batches from one or more sources by  <span class="code-block">Gst.ElementFactory.make()</span>.</li>
-              <li>Get the sink pad of streammux by <span class="code-block">get_request_pad()</span>.</li>
-            </ul>
-
-            <h3>Convert input frames from NV12 to RGBA</h3>
-            <p>I need this part because the pre-process algorithm requires RGBA format of input frames.</p>
-            <ul class="dot-ul">
-              <li>Create nvvideoconvert instance as a video converter by <span class="code-block">Gst.ElementFactory.make().</span></li>
-              <li>Create capsfilter instance to define the output format of the nvvideoconvert by <span class="code-block">Gst.ElementFactory.make()</span>.</li>
-              <li>Define and set the property of capsfilter by as "video/x-raw(memory:NVMM), format=RGBA" by <span class="code-block">Gst.Caps.from_string()</span> and <span class="code-block">set_property()</span>.</li>
-            </ul>
-
-            <h3>Pre-process to calibrate the input frames</h3>
-            <p>Perform perspective transformation and background subtraction by implementing a custom C++ plugin. More Details are in <a href="https://github.com/zk2172-columbia/ProjectTrafficIntersection.COSMOS.V2/tree/jl5999-realtime/calibration_plugin">here</a>.</p>
-
-            <h3>Perform object detection and tracking.</h3>
-            <ul class="dot-ul">
-              <li>Create nvinfer instance to run inference on decoder's output by <span class="code-block">Gst.ElementFactory.make()</span>, behaviour of inferencing is set through config file by <span class="code-block">set_property()</span>.</li>
-              <li>Add tracker instance by <span class="code-block">Gst.ElementFactory.make()</span>, and set its configurations by <span class="code-block">set_property()</span>.</li>
-            </ul>
-
-            <h3>Draw the bounding boxes</h3>
-            <ul class="dot-ul">
-              <li>Create nvosd instance to draw on the converted RGBA buffer by <span class="code-block">Gst.ElementFactory.make()</span>.</li>
-              <li>Add a probe to get informed of the meta data generated. More details are in function <span class="code-block">osd_sink_pad_buffer_probe()</span>.
-                <ul class="circle-ul">
-                  <li>Get <span class="code-block">GstBuffer</span> by <span class="code-block">get_buffer()</span>.</li>
-                  <li>Get <span class="code-block">BatchMeta</span> by <span class="code-block">pyds.gst_buffer_get_nvds_batch_meta()</span>, which contains a member called <span class="code-block">frame_meta_list</span>.</li>
-                  <li>Iterate frames by <span class="code-block">next</span> pointer of <span class="code-block">frame_meta_list</span>.</li>
-                </ul>
-              </li>
-              <li>We add probe to the sink pad of the osd element, since by that time, the buffer would have had got all the metadata. This is done by <span class="code-block">add_probe()</span>.</li>
-              <li></li>
-            </ul>
-
-            <h3>Save the output to a file</h3>
-            <ul class="dot-ul">
-              <li>Create <span class="code-block">queue</span>, <span class="code-block">avenc_mpeg4</span>, <span class="code-block">mpeg4videoparse</span>, <span class="code-block">matroskamux</span>, <span class="code-block">filesink</span> instance by <span class="code-block">Gst.ElementFactory.make()</span>.</li>
-              <li>Set the properties of them by <span class="code-block">set_property()</span>.
-              </li>
-            </ul>
-
-            <h3>Build the pipeline</h3>
-            <ul class="dot-ul">
-              <li>Standard GStreamer initialization by <span class="code-block">Gst.init()</span>.</li>
-              <li>Create Pipeline element that will form a connection of other elements by <span class="code-block">Gst.Pipeline()</span>.</li>
-              <li>Add all elements to the pipeline by <span class="code-block">add()</span>.</li>
-              <li>Link all elements in order by <span class="code-block">link()</span>.</li>
-              <li>Create an event loop by <span class="code-block">GLib.MainLoop()</span>.</li>
-              <li>Feed gstreamer bus mesages by <span class="code-block">get_bus()</span> and <span class="code-block">add_signal_watch()</span>.</li>
-              <li>Start play back and listen to events by <span class="code-block">set_state()</span> and <span class="code-block">run()</span>.</li>
-            </ul>
-
-            <h3>Summary</h3>
-            <p>Application Workflow:</p>
-            <p>rtsp-source -> srcpad -> sinkpad -> streammux -> nvvidconv -> capsfilter -> nvinfer -> nvtracker -> nvosd -> queue -> encoder -> parser -> container -> sink -> output-file</p>
-
-          </li>
-
-          <li>Usage
-            <div class="shell-code">
-              <pre>$ sudo python3 realtime_main.py <span class="code-block">VIEW</span> </pre>
+                    <li>Compiling and installing the plugin
+                        <ol>
+                            <li>Export or set in Makefile the appropriate cuda version using <span class="code-block">CUDA_VER</span>
+                            </li>
+                            <li>Run
+                                <div class="shell-code">
+                                    <pre>$ sudo make </pre>
+                                </div>
+                            </li>
+                            <li>Run
+                                <div class="shell-code">
+                                    <pre>$ sudo make install</pre>
+                                </div>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
             </div>
-          </li>
-        </ol>
-
-      </div>
-
+        </div>
 
     </div>
-  </div>
-</div>
 
+    <!--  Usage-->
+    <div>
+        <a class="anchor" id="usage"></a>
+        <h1>Get Started</h1>
+
+        <!--    deepstream-app-->
+        <div class="section">
+            <a class="anchor" id="deepstream-app-start"></a>
+            <h2>DeepStream Reference Application: deepstream-app</h2>
+            <div class="subsection dot-ul">
+                <h3>Application Architecture</h3>
+                <p>The image below shows the architecture of the NVIDIA DeepStream reference application.</p>
+                <img src="/images/DS_reference_ds_app.png" alt="*">
+                <p>The DeepStream reference application is a GStreamer based solution and consists of set of GStreamer
+                    plugins encapsulating low-level APIs to form a complete graph. The reference application has
+                    capability to accept input from various sources like camera, RTSP input, encoded file input, and
+                    additionally supports multi stream/source capability. The list of GStreamer plugins implemented by
+                    NVIDIA and provided as a part of DeepStream SDK include:</p>
+                <ul class="dot-ul">
+                    <li>The Stream Muxer plugin (<span class="code-block">Gst-nvstreammux</span>) to form a batch of
+                        buffers from multiple input sources.
+                    </li>
+                    <li>The Preprocess plugin (<span class="code-block">Gst-nvdspreprocess</span>) for preprocessing on
+                        the pre-defined ROIs for primary inferencing.
+                    </li>
+                    <li>The NVIDIA TensorRT based plugin (<span class="code-block">Gst-nvinfer</span>) for primary and
+                        secondary (attribute classification of primary objects) detection and classification
+                        respectively.
+                    </li>
+                    <li>The OpenCV based tracker plugin (<span class="code-block">Gst-nvtracker</span>) for object
+                        tracking with unique ID.
+                    </li>
+                    <li>The Multi Stream Tiler plugin (<span class="code-block">Gst-nvmultistreamtiler</span>) for
+                        forming 2D array of frames.
+                    </li>
+                    <li>The Onscreen Display (OSD) plugin (<span class="code-block">Gst-nvdsosd</span>) to draw shaded
+                        boxes, rectangles and text on the composited frame using the generated metadata.
+                    </li>
+                    <li>The Message Converter (<span class="code-block">Gst-nvmsgconv</span>) and Message Broker (<span
+                            class="code-block">Gst-nvmsgbroker</span>) plugins in combination to send analytics data to
+                        a server in the Cloud.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>Run the Reference Application</h3>
+                <div class="shell-code">
+                    <pre>$ deepstream-app -c <span class="code-block">path-to-config-file</span>  </pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <a class="anchor" id="python-app-start"></a>
+            <h2>Real-time Detection and Tracking Application for 12th-floor Camera</h2>
+            <div class="subsection">
+                <ol>
+                    <li>Environment
+                        <ul class="dot-ul">
+                            <li>Ubuntu 20.04</li>
+                            <li>DeepStream SDK 6.1</li>
+                            <li>Python 3.8</li>
+                            <li>DeepStreamSDK python bindings</li>
+                            <li>Gst Python v1.16.2
+                                If missing, install with the following steps:
+                                <div class="shell-code">
+                                    <pre>$ sudo apt-get install python-gi-dev</pre>
+                                    <pre>$ export GST_LIBS="-lgstreamer-1.0 -lgobject-2.0 -lglib-2.0"</pre>
+                                    <pre>$ export GST_CFLAGS="-pthread -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include"</pre>
+                                    <pre>$ git clone https://github.com/GStreamer/gst-python.git</pre>
+                                    <pre>$ cd gst-python</pre>
+                                    <pre>$ git checkout 5343aeb</pre>
+                                    <pre>$ ./autogen.sh PYTHON=python3</pre>
+                                    <pre>$ ./configure PYTHON=python3</pre>
+                                    <pre>$ make</pre>
+                                    <pre>$ sudo make install</pre>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </li>
+
+                    <li>Pipeline Construction
+                        <h3>Outline:</h3>
+                        <ul class="dot-ul">
+                            <li>Read RTSP video stream from 12th-floor cameras</li>
+                            <li>Form a batch of buffers from multiple input sources</li>
+                            <li>Convert input frames from NV12 to RGBA</li>
+                            <li>Pre-process to calibrate the input frames</li>
+                            <li>Perform object detection and tracking</li>
+                            <li>Draw the bounding boxes</li>
+                            <li>Save the output to a file</li>
+                            <li>Build the pipeline</li>
+                        </ul>
+
+                        <h3>Read RTSP video stream from 12th-floor cameras</h3>
+                        <ul class="dot-ul">
+                            <li>Create a source GstBin to abstract this bin's content from the rest of the pipeline by
+                                <span class="code-block">Gst.Bin.new()</span>.
+                            </li>
+                            <li>Create a GStreamer source element called uri-decode-bin for reading from the RTSP stream
+                                by <span class="code-block">Gst.ElementFactory.make()</span>.
+                                (<span class="code-block">make_elm_or_print_err()</span> is a wrapper function for this
+                                API.) Set the RTSP uri by <span class="code-block">set_property()</span></li>
+                            <li>Add the uri-decode-bin to GstBin by <span class="code-block">Gst.Bin.add()</span> and
+                                get it by <span class="code-block">get_static_pad()</span>.
+                            </li>
+                        </ul>
+
+                        <h3>Form a batch of buffers from multiple input sources</h3>
+                        <p>Although the input in this python app is only one, I add streammux if we need to deal with
+                            multi-stream in the future.</p>
+                        <ul class="dot-ul">
+                            <li>Create nvstreammux instance to form batches from one or more sources by <span
+                                    class="code-block">Gst.ElementFactory.make()</span>.
+                            </li>
+                            <li>Get the sink pad of streammux by <span class="code-block">get_request_pad()</span>.</li>
+                        </ul>
+
+                        <h3>Convert input frames from NV12 to RGBA</h3>
+                        <p>I need this part because the pre-process algorithm requires RGBA format of input frames.</p>
+                        <ul class="dot-ul">
+                            <li>Create nvvideoconvert instance as a video converter by <span class="code-block">Gst.ElementFactory.make().</span>
+                            </li>
+                            <li>Create capsfilter instance to define the output format of the nvvideoconvert by <span
+                                    class="code-block">Gst.ElementFactory.make()</span>.
+                            </li>
+                            <li>Define and set the property of capsfilter by as "video/x-raw(memory:NVMM), format=RGBA"
+                                by <span class="code-block">Gst.Caps.from_string()</span> and <span class="code-block">set_property()</span>.
+                            </li>
+                        </ul>
+
+                        <h3>Pre-process to calibrate the input frames</h3>
+                        <p>Perform perspective transformation and background subtraction by implementing a custom C++
+                            plugin. More Details are in <a
+                                    href="https://github.com/zk2172-columbia/ProjectTrafficIntersection.COSMOS.V2/tree/jl5999-realtime/calibration_plugin">here</a>.
+                        </p>
+
+                        <h3>Perform object detection and tracking.</h3>
+                        <ul class="dot-ul">
+                            <li>Create nvinfer instance to run inference on decoder's output by <span
+                                    class="code-block">Gst.ElementFactory.make()</span>, behaviour of inferencing is set
+                                through config file by <span class="code-block">set_property()</span>.
+                            </li>
+                            <li>Add tracker instance by <span class="code-block">Gst.ElementFactory.make()</span>, and
+                                set its configurations by <span class="code-block">set_property()</span>.
+                            </li>
+                        </ul>
+
+                        <h3>Draw the bounding boxes</h3>
+                        <ul class="dot-ul">
+                            <li>Create nvosd instance to draw on the converted RGBA buffer by <span class="code-block">Gst.ElementFactory.make()</span>.
+                            </li>
+                            <li>Add a probe to get informed of the meta data generated. More details are in function
+                                <span class="code-block">osd_sink_pad_buffer_probe()</span>.
+                                <ul class="circle-ul">
+                                    <li>Get <span class="code-block">GstBuffer</span> by <span class="code-block">get_buffer()</span>.
+                                    </li>
+                                    <li>Get <span class="code-block">BatchMeta</span> by <span class="code-block">pyds.gst_buffer_get_nvds_batch_meta()</span>,
+                                        which contains a member called <span class="code-block">frame_meta_list</span>.
+                                    </li>
+                                    <li>Iterate frames by <span class="code-block">next</span> pointer of <span
+                                            class="code-block">frame_meta_list</span>.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>We add probe to the sink pad of the osd element, since by that time, the buffer would
+                                have had got all the metadata. This is done by <span
+                                        class="code-block">add_probe()</span>.
+                            </li>
+                            <li></li>
+                        </ul>
+
+                        <h3>Save the output to a file</h3>
+                        <ul class="dot-ul">
+                            <li>Create <span class="code-block">queue</span>, <span
+                                    class="code-block">avenc_mpeg4</span>, <span
+                                    class="code-block">mpeg4videoparse</span>, <span
+                                    class="code-block">matroskamux</span>, <span class="code-block">filesink</span>
+                                instance by <span class="code-block">Gst.ElementFactory.make()</span>.
+                            </li>
+                            <li>Set the properties of them by <span class="code-block">set_property()</span>.
+                            </li>
+                        </ul>
+
+                        <h3>Build the pipeline</h3>
+                        <ul class="dot-ul">
+                            <li>Standard GStreamer initialization by <span class="code-block">Gst.init()</span>.</li>
+                            <li>Create Pipeline element that will form a connection of other elements by <span
+                                    class="code-block">Gst.Pipeline()</span>.
+                            </li>
+                            <li>Add all elements to the pipeline by <span class="code-block">add()</span>.</li>
+                            <li>Link all elements in order by <span class="code-block">link()</span>.</li>
+                            <li>Create an event loop by <span class="code-block">GLib.MainLoop()</span>.</li>
+                            <li>Feed gstreamer bus mesages by <span class="code-block">get_bus()</span> and <span
+                                    class="code-block">add_signal_watch()</span>.
+                            </li>
+                            <li>Start play back and listen to events by <span class="code-block">set_state()</span> and
+                                <span class="code-block">run()</span>.
+                            </li>
+                        </ul>
+
+                        <h3>Summary</h3>
+                        <p>Application Workflow:</p>
+                        <p>rtsp-source -> srcpad -> sinkpad -> streammux -> nvvidconv -> capsfilter -> nvinfer ->
+                            nvtracker -> nvosd -> queue -> encoder -> parser -> container -> sink -> output-file</p>
+
+                    </li>
+
+                    <li>Usage
+                        <div class="shell-code">
+                            <pre>$ sudo python3 realtime_main.py <span class="code-block">VIEW</span> </pre>
+                        </div>
+                    </li>
+                </ol>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
 
 
 </body>

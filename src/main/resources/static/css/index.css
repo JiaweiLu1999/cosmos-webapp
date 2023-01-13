@@ -1,17 +1,17 @@
 .proj-title {
-    margin-top: 70px;
+    margin-top: 65px;
     text-align: center;
     color: #222;
 }
 
 .proj-name {
-    font-size: 30px;
-    font-weight: 900;
+    font-size: 28px;
+    font-weight: 700;
 }
 
 .proj-subtitle {
-    font-size: 24px;
-    font-weight: 900;
+    font-size: 22px;
+    font-weight: 700;
 }
 
 .slideshow-container {
@@ -87,7 +87,6 @@
 }
 
 
-
 .slide-dot-container {
     height: 30px;
     float: right;
@@ -104,7 +103,6 @@
     vertical-align: middle;
     cursor: pointer;
 }
-
 
 
 .active {
@@ -131,6 +129,10 @@
 
 
 @keyframes fade {
-    from {opacity: .2}
-    to {opacity: 1}
+    from {
+        opacity: .2
+    }
+    to {
+        opacity: 1
+    }
 }
