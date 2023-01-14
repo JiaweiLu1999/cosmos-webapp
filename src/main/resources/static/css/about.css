@@ -1,0 +1,9 @@
+.about-body {
+    margin-top: 60px;
+    padding-top: 30px;
+}
+
+.about-content p {
+    text-indent: 2em;
+    margin-bottom: 5px;
+}
