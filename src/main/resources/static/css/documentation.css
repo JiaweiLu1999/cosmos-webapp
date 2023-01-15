@@ -41,11 +41,24 @@
 }
 
 .doc-body .section {
-
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .doc-body .subsection {
+    margin-top: 1em;
+}
 
+.doc-body ol li {
+    margin-bottom: 0.5em;
+}
+
+.doc-body ol li ol {
+    text-indent: 2em;
+}
+
+.doc-body .subsection h4 {
+    margin-top: 0.5em;
 }
 
 .doc-body .subsection ol li ol {
@@ -80,6 +93,7 @@ a.anchor {
 }
 
 .nav-main a:hover {
+    text-decoration: underline;
     color: darkred;
 }
 

@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>About | COSMOS Sub-project</title>
-    <link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="/css/common.css">
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/about.css">
+  <meta charset="UTF-8">
+  <title>About | COSMOS Sub-project</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/about.css">
+
+  <!--    <link rel="stylesheet" href="../static/css/base.css">-->
+  <!--    <link rel="stylesheet" href="../static/css/common.css">-->
+  <!--    <link rel="stylesheet" href="../static/css/about.css">-->
 </head>
 <body>
 
@@ -14,63 +18,69 @@
 <div th:replace="index.html::#top-nav"></div>
 
 <div class="about-body wrapper">
-    <div class="about-content">
-        <h2>Background</h2>
-        <p>
-            The study described in this paper relies on video streams from a smart city intersection which is part of
-            the Cloud Enhanced Open Software Defined Mobile Wireless Testbed for City-Scale Deployment (COSMOS),
-            located in New York City (NYC) as part of the NSF PAWR program. The study uses cameras mounted on the 12th
-            floor of the Mudd building at Columbia University, giving views of 120th Street and Amsterdam Avenue
-            respectively. The bird’s-eye cameras minimize object occlusion (due to a near-vertical perspective) and
-            avoid the issues of privacy. The wide-angle cameras also provide a contextual view of the entire
-            intersection.
-        </p>
+  <div class="about-content">
+    <h2>Background</h2>
+    <p>
+      The study relies on video streams from a smart city intersection which is part of
+      the Cloud Enhanced Open Software Defined Mobile Wireless Testbed for City-Scale Deployment (COSMOS),
+      located in New York City (NYC) as part of the NSF PAWR program. The study uses cameras mounted on the 12th
+      floor of the Mudd building at Columbia University, giving views of 120th Street and Amsterdam Avenue
+      respectively. The bird’s-eye cameras minimize object occlusion (due to a near-vertical perspective) and
+      avoid the issues of privacy. The wide-angle cameras also provide a contextual view of the entire
+      intersection.
+    </p>
 
-        <p>
-            The COSMOS Smart City Intersection project started in 2016, and lots of previous work has been done for
-            real-time detection and tracking.
-        </p>
+    <p>
+      The COSMOS Smart City Intersection project started in 2016, and lots of previous work has been done for
+      real-time detection and tracking.
+    </p>
 
-        <p>
-            Zhengye Yang et al. built a traffic dataset based on 12th-floor videos and trained a YOLOv4 model based on
-            this dataset, which achieves 0.82 AP for vehicle detection, 0.51 AP for pedestrian detection, and a total
-            mAP of 0.67. However, they only conducted research on recorded video files and did not apply this model
-            to a real-time video stream from these cameras.
-        </p>
+    <p>
+      Zhengye Yang et al. built a traffic dataset based on 12th-floor videos and trained a YOLOv4 model based on
+      this dataset, which achieves 0.82 AP for vehicle detection, 0.51 AP for pedestrian detection, and a total
+      mAP of 0.67. However, they only conducted research on recorded video files and did not apply this model
+      to a real-time video stream from these cameras.
+    </p>
 
-        <p>
-            Mahshid Ghasemi Dehkordi et al. realize real-time vehicle and pedestrian detection for 1st and 2nd-floor
-            cameras on the COSMOS server. However, the 12th-floor cameras are not directly connected to the COSMOS
-            platform, and we cannot perform experiments on the COSMOS testbed 24/7 since we need to reserve time for
-            server usage.
-        </p>
-    </div>
+    <p>
+      Mahshid Ghasemi Dehkordi et al. realize real-time vehicle and pedestrian detection for 1st and 2nd-floor
+      cameras on the COSMOS server. However, the 12th-floor cameras are not directly connected to the COSMOS
+      platform, and we cannot perform experiments on the COSMOS testbed 24/7 since we need to reserve time for
+      server usage.
+    </p>
 
-    <div class="about-content">
-        <h2>Summary</h2>
-        <p>
-            During 2022 summer, I built an application based on Nvidia DeepStream to realize real-time object detection
-            and tracking, and implement a pre-processing GStreamer plugin to improve detection accuracy. The experiment
-            shows that our model achieves 0.82 AP for vehicle detection, 0.51 AP for pedestrian detection, and 0.67 mAP.
-            Our application is able to run 5 frames-per-second on our Linux server with a single Nivida Titan X GPU. Our
-            proposed application gives a solution for smart city intersections to aggregate and process data from bird’s
-            eye cameras, predict the number of vehicles and pedestrians and give real-time feedback to the traffic
-            management system.
-        </p>
+    <p>
+      Therefore, we are aimed to realize real-time vehicle and pedestrian detection and tracking, whose input is an RTSP
+      video stream from 12th-floor cameras, on our lab’s Linux server.
+    </p>
+  </div>
 
-        <p>
-            During 2022 Fall, I built an application based on Nvidia DeepStream to realize real-time object detection
-            and tracking, implemented a method to send the MQTT messages which contain the computed speed and direction
-            of detected objects, and integrated two cameras (street-level and bird’s eye view, both viewing the same
-            traffic intersection) to improve the detection results. The obtained information from the application is
-            sent to a dedicated dashboard provided by Kentyou for real-time visualization and further assessment (e.g.,
-            accident prevention). The application is able to run 15 frames per second on our Linux server with a single
-            Nivida Titan X GPU. It gives a solution for smart city intersections to aggregate and process data from
-            multiple cameras, predict the number of vehicles and pedestrians, estimate the speed and direction of
-            detected objects, and finally give real-time feedback to the central traffic management system.
-        </p>
+  <div class="about-content">
+    <h2>Summary</h2>
+    <p>
+      During 2022 summer, I built an application based on Nvidia DeepStream to realize real-time object detection
+      and tracking, and implement a pre-processing GStreamer plugin to improve detection accuracy. The experiment
+      shows that our model achieves 0.82 AP for vehicle detection, 0.51 AP for pedestrian detection, and 0.67 mAP.
+      Our application is able to run 5 frames-per-second on our Linux server with a single Nvidia Titan X GPU.
+    </p>
 
-    </div>
+    <p>
+      In 2022 Fall semester, I implemented a method to send the MQTT messages which contain the computed speed and
+      direction
+      of detected objects, and integrated two cameras (street-level and bird’s eye view, both viewing the same
+      traffic intersection) to improve the detection results. The obtained information from the application is
+      sent to a dedicated dashboard provided by Kentyou for real-time visualization and further assessment (e.g.,
+      accident prevention). The application is able to run 15 frames per second on our Linux server with a single
+      Nvidia Titan X GPU.
+    </p>
+
+    <p>
+      This project gives a solution for smart city intersections to aggregate and process data from
+      multiple cameras, predict the number of vehicles and pedestrians, estimate the speed and direction of
+      detected objects, and finally give real-time feedback to the central traffic management system.
+    </p>
+
+  </div>
 
 
 </div>

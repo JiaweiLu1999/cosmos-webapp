@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Home | COSMOS Sub-project</title>
-    <link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="/css/common.css">
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../static/css/base.css">
-    <link rel="stylesheet" href="../static/css/common.css">
-    <link rel="stylesheet" href="../static/css/index.css">
+  <meta charset="UTF-8">
+  <title>Home | COSMOS Sub-project</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
 </head>
 
 
@@ -17,70 +14,90 @@
 
 <!--This is navigation bar-->
 <div id="top-nav" class="nav">
-    <div class="wrapper">
-        <a class="logo" th:href="@{/}"></a>
-        <ul>
-            <li><a th:href="@{/demo}">Demo</a></li>
-            <li><a th:href="@{/resource}">Resource</a></li>
-            <li><a th:href="@{/documentation}">Documentation</a></li>
-            <li><a th:href="@{/about}">About</a></li>
-            <li><a th:href="@{/}">Home</a></li>
-        </ul>
-    </div>
+  <div class="wrapper">
+    <a class="logo" th:href="@{/}"></a>
+    <ul>
+      <li><a th:href="@{/demo}">Demo</a></li>
+      <li><a th:href="@{/resource}">Resource</a></li>
+      <li><a th:href="@{/documentation}">Documentation</a></li>
+      <li><a th:href="@{/about}">About</a></li>
+      <li><a th:href="@{/}">Home</a></li>
+    </ul>
+  </div>
 </div>
 
 <!--Project Overview-->
 <div class="proj-title wrapper">
-    <div class="proj-name">Real-time Object Detection and Tracking Based on Nvidia DeepStream</div>
-    <div class="proj-subtitle">Sub-Project of COSMOS Smart Intersections</div>
+  <div class="proj-name">Real-time Object Detection and Tracking Based on Nvidia DeepStream</div>
+  <div class="proj-subtitle">Sub-Project of COSMOS Smart Intersections</div>
 </div>
 
 <div class="slideshow-container wrapper">
-    <div class="slide fade">
-        <img src="/images/12f.jpg" alt=""/>
-        <div class="img-caption">Real-time Detection Application</div>
+  <div class="slide fade">
+    <a th:href="@{/demo}">
+    <img src="/images/index/home_01.png" alt=""/>
+    <div class="img-caption">
+      <h4>Real-time Detection Application</h4>
+      <p>A Python Application based on Nvidia DeepStream to realize real-time object detection and tracking. The model
+        achieves 0.82 AP for vehicle detection, 0.51 AP for pedestrian detection, and 0.67 mAP. The application is able
+        to run 14 frames-per-second on our Linux server with a single Nvidia Titan X GPU. </p>
     </div>
+    </a>
+  </div>
 
-    <div class="slide fade">
-        <img src="/images/cameras.png" alt="" style="width: 100%"/>
-        <div class="img-caption">GStreamer Plugin</div>
+  <div class="slide fade">
+    <a th:href="@{/documentation#calibration-install}">
+    <img src="/images/index/home_02.png" alt=""/>
+    <div class="img-caption">
+      <h4>Customized GStreamer Plugin</h4>
+      <p>The frame pre-processing C++ GStreamer plugin to improve detection accuracy. It performs perspective
+        transformation and background subtraction. It is necessary to align the raw RTSP video stream and the training
+        set.</p>
     </div>
+    </a>
+  </div>
 
-    <div class="slide fade">
-        <img src="/images/areas_1126.png" alt="" style="width: 100%"/>
-        <div class="img-caption">Integration with 2nd-floor Camera</div>
+  <div class="slide fade">
+    <img src="/images/index/home_03.png" alt=""/>
+    <div class="img-caption">
+      <h4>Integration with 2nd-floor Cameras</h4>
+      <p>Integrate the results obtained from both a bird’s eye view and street-level perspective cameras. It is supposed
+        to provide more precise traffic and pedestrian-related information compared to using only a single view.
+      </p>
     </div>
+  </div>
 </div>
 
 <div class="slide-tool wrapper">
-    <div class="btn-container">
-        <button class="btn" onclick="plusDivs(-1)">&#10094;</button>
-        <button class="btn" onclick="plusDivs(1)">&#10095;</button>
-    </div>
+  <div class="btn-container">
+    <button class="btn" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="btn" onclick="plusDivs(1)">&#10095;</button>
+  </div>
 
-    <div class="player-container">
-        <div id="btn-play" class="player-text">
-            <button class="player" onclick="startShow()">PLAY</button>
-        </div>
-        <div id="btn-stop" class="player-text">
-            <button id="btn-stop-body" class="player" onclick="stopShow()">STOP</button>
-        </div>
+  <div class="player-container">
+    <div id="btn-play" class="player-text">
+      <button id="btn-play-body" class="player" onclick="startShow()">PLAY</button>
     </div>
+    <div id="btn-stop" class="player-text">
+      <button id="btn-stop-body" class="player" onclick="stopShow()">STOP</button>
+    </div>
+  </div>
 
-    <div class="slide-dot-container">
-        <div class="slide-dot" onclick="showDivs(1)"></div>
-        <div class="slide-dot" onclick="showDivs(2)"></div>
-        <div class="slide-dot" onclick="showDivs(3)"></div>
-    </div>
+  <div class="slide-dot-container">
+    <div class="slide-dot" onclick="showDivs(1)"></div>
+    <div class="slide-dot" onclick="showDivs(2)"></div>
+    <div class="slide-dot" onclick="showDivs(3)"></div>
+  </div>
 </div>
 
 </body>
 
 <script>
     let slideIndex = 1;
-    showDivs(slideIndex);
+
     // showSlides();
     let playerId;
+    startShow();
 
     function autoShow() {
         showDivs(slideIndex);
@@ -90,7 +107,6 @@
 
     function startShow() {
         document.getElementById("btn-play").style.display = "none";
-
         document.getElementById("btn-stop").style.display = "block";
         document.getElementById("btn-stop-body").style.width = "100px";
         autoShow();
@@ -99,6 +115,7 @@
     function stopShow() {
         document.getElementById("btn-play").style.display = "block";
         document.getElementById("btn-stop").style.display = "none";
+        document.getElementById("btn-play-body").style.width = "100px";
         clearTimeout(playerId);
     }
 

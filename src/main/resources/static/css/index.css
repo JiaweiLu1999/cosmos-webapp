@@ -17,10 +17,23 @@
 .slideshow-container {
     margin: 10px auto;
     width: 960px;
-    height: 600px;
+    height: 620px;
 
-    background-color: #666666;
+    background-color: #333;
     text-align: center;
+    color: white;
+}
+
+.slideshow-container a {
+    text-decoration: none;
+    color: white;
+}
+.img-caption h4 {
+    margin-top: 3px;
+}
+.img-caption p {
+    margin-top: 3px;
+    font-size: small;
 }
 
 .slide {
@@ -82,7 +95,8 @@
     background-color: brown;
 }
 
-#btn-stop {
+
+#btn-play {
     display: none;
 }
 
