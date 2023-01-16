@@ -21,16 +21,17 @@
     <div class="nav-main">
         <ul>
             <li>
-                <a href="">Detection & Tracking</a>
+                <a href="#result-record">Detection & Tracking</a>
                 <ul>
-                    <li>Recorded Videos</li>
-                    <li><a href="http://128.59.66.94:4321" target="_blank">Real-time Stream</a></li>
+                    <li><a href="#result-record">Recorded Videos</a></li>
+                    <li><a href="#result-realtime">Real-time Saved Results</a></li>
+                    <li><a href="http://128.59.66.94:4321" target="_blank">Real-time Live Stream</a></li>
                 </ul>
             </li>
             <li>
-                <a href="">Integration</a>
+                <a th:href="@{/integration}">Integration</a>
                 <ul>
-                    <li>2nd-floor and 12th-floor</li>
+                    <li><a th:href="@{/integration}">2nd-floor and 12th-floor</a></li>
                 </ul>
             </li>
 
@@ -41,6 +42,7 @@
 
 <div class="demo-body wrapper">
     <div class="section">
+        <a class="anchor" id="result-record"></a>
         <h2>Detection and Tracking Result of Recorded Videos</h2>
         <div>
             <table>
@@ -70,6 +72,7 @@
     </div>
 
     <div class="section">
+        <a class="anchor" id="result-realtime"></a>
         <h2>Detection and Tracking Result of Real-time Stream -- Saved Files</h2>
         <div>
             <table>
@@ -97,10 +100,6 @@
             </div>
         </div>
     </div>
-
-
-
-
 
 </div>
 

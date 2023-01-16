@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo | COSMOS Sub-project</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/demo.css">
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="../static/css/base.css">
+  <link rel="stylesheet" href="../static/css/common.css">
+  <link rel="stylesheet" href="../static/css/demo.css">
+</head>
+<body>
+
+<div th:replace="index.html::#top-nav"></div>
+
+<div class="left-nav">
+  <div class="nav-main">
+    <ul>
+      <li>
+        <a th:href="@{/demo#result-record}">Detection & Tracking</a>
+        <ul>
+          <li><a th:href="@{/demo#result-record}">Recorded Videos</a></li>
+          <li><a th:href="@{/demo#result-realtime}">Real-time Saved Results</a></li>
+          <li><a href="http://128.59.66.94:4321" target="_blank">Real-time Live Stream</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="">Integration</a>
+        <ul>
+          <li>2nd-floor and 12th-floor</li>
+        </ul>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+<div class="demo-body wrapper">
+  <div class="section">
+    <h3>Background</h3>
+    <p>
+      The calculation of on-ground distance is relatively simple when using a bird’s eye view compared to a street-level
+      perspective. In addition, object occlusion is infrequent in a bird’s eye view,
+      resulting in an unobstructed view of objects. However, pedestrian detection is more accurate from a street-level
+      perspective because pedestrians appear smaller from a bird’s eye view. To address this issue, we integrate the
+      results obtained from both cameras to provide more precise traffic and pedestrian-related information compared to
+      using only a single view.
+    </p>
+  </div>
+
+  <div class="section">
+    <h3>Algorithm</h3>
+    <ul>
+      <li><b>Temporal alignment</b>:
+        <p>Find the frames with the time stamps from the two cameras (to support integration). We can set a threshold
+          𝛅,
+          if |t_Ams- t_120| < 𝛅, we can say that they are frames with the same time stamp.</p>
+      </li>
+      <li><b>Spatial alignment</b>:
+        <p>
+          Accurate on-ground coordinate calculation from the 2nd-floor camera requires multi-area calibration, i.e.,
+          calibrating each area individually. Therefore, to achieve temporal alignment, we determined the corresponding
+          areas from the perspective of the 12th-floor camera as well. For each detected
+          pedestrian/vehicle on both cameras, the area it lies in, and its on-ground coordinates with respect to the
+          origin of that area are calculated. This allows objects detected in different views to be spatially aligned.
+        </p>
+      </li>
+      <li><b>Integration</b>:
+        <p>
+          All the pedestrians/vehicles detected from both cameras are integrated, and the objects with high occlusion
+          are
+          removed.
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+</body>
+</html>

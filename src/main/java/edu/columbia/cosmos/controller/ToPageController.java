@@ -31,4 +31,9 @@ public class ToPageController {
     public String demo() {
         return "demo";
     }
+
+    @GetMapping("/integration")
+    public String integration() {
+        return "integration";
+    }
 }

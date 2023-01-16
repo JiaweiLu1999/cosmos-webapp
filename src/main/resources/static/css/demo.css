@@ -67,7 +67,23 @@
 }
 
 .section {
-    margin: 10px 0;
+    margin-bottom: 30px;
+}
+
+.nav-main a:hover {
+    color: darkred;
+    text-decoration: underline;
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -90px;
+    visibility: hidden;
+}
+
+.demo-body ul li {
+    margin-bottom: 10px;
 }
 
 @media screen and (max-width: 1680px) {
